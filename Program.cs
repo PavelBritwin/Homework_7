@@ -1,6 +1,6 @@
-﻿// Task 50
+﻿// Task 52
 Console.Clear();
-int[,] array = new int[new Random().Next(5, 10), new Random().Next(5, 10)];
+int[,] array = new int[5, 5];
 for (int i = 0; i < array.GetLength(0); i++)
 {
     for (int j = 0; j < array.GetLength(1); j++)
@@ -10,15 +10,13 @@ for (int i = 0; i < array.GetLength(0); i++)
     }
     Console.WriteLine();
 }
-
-Console.WriteLine("Введите индексы элемента массива: ");
-int firstIndex = Convert.ToInt32(Console.ReadLine()); // first
-int secondIndex = Convert.ToInt32(Console.ReadLine()); // second
-
-if ((firstIndex < 0)||
-    (firstIndex >= array.GetLength(0))||
-    (secondIndex < 0)||
-    (secondIndex >= array.GetLength(1)))
-    Console.WriteLine("Такого элемента нет в массиве!");
-else
-    Console.WriteLine($"Значение элемента: {array[firstIndex, secondIndex]}");
+Console.WriteLine();
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    double average = 0;
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        average += array[j, i];
+    }
+    Console.Write($"{average/array.GetLength(0)}  ");
+}
