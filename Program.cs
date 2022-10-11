@@ -1,7 +1,5 @@
 ﻿// Task 50
-
 Console.Clear();
-
 int[,] array = new int[new Random().Next(5, 10), new Random().Next(5, 10)];
 for (int i = 0; i < array.GetLength(0); i++)
 {
